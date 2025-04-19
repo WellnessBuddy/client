@@ -1,4 +1,5 @@
 import { lazy } from 'react';
+import LandingPage from './views/LandingPage';
 
 // Lazy load views for better performance
 const Dashboard = lazy(() => import('./views/Dashboard'));
@@ -14,6 +15,12 @@ const Dashboard = lazy(() => import('./views/Dashboard'));
 const routes = [
     {
         path: '/',
+        element: <LandingPage />,
+        exact: true,
+        useLayout: false
+    },
+    {
+        path: '/dashboard',
         element: <Dashboard />,
         exact: true,
         useLayout: true
